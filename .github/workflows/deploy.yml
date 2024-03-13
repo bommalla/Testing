@@ -14,12 +14,5 @@ jobs:
 
     - name: Create script
       run: echo  script.sh
-
-    - name: Add and commit script
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git add script.sh
-        git commit -m "Add script"
       
 
