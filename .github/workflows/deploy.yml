@@ -1,0 +1,25 @@
+name: Push Shell Script
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push_script:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout
+
+    - name: Create script
+      run: echo  script.sh
+
+    - name: Add and commit script
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add script.sh
+        git commit -m "Add script"
+      
+
